@@ -1,0 +1,10 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: DiscoveryService
+info:
+  app:
+    name: Discovery Service Application
+    description: Service for Application Discovery
+    version: 1.0.0

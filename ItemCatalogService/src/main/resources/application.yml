@@ -1,0 +1,10 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: ItemCatalogService
+info:
+  app:
+    name: Item Catalog Service Application
+    description: Service for Item Catalog
+    version: 1.0.0

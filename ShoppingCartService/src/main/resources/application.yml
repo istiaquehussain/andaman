@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: ShoppingCartService
+info:
+  app:
+    name: Shopping Cart Service Application
+    description: Service for Shopping Cart
+    version: 1.0.0
+service:
+  customersearch:
+    serviceId: CustomerService
+  itemsearch:
+    serviceId: ItemCatalogService

@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: ProxyService
+  profiles:
+    active: dev
+zuul:
+  routes:
+    CustomerService:
+      path: /cs/**
+      service-id: CustomerService
+      strip-prefix: false
+    ItemCatalogService:
+      path: /ics/**
+      service-id: ItemCatalogService
+      strip-prefix: false
+    ShoppingCartService:
+      path: /scs/**
+      service-id: ShoppingCartService
+      strip-prefix: false   
+info:
+  app:
+    name: Proxy Service Application
+    description: Service for Proxy
+    version: 1.0.0
