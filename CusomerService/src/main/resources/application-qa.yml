@@ -1,6 +1,0 @@
-server:
-  port: 7030
-eureka:
-  client:
-    service-url:
-      defaultZone: http://qa:7000/eureka/
