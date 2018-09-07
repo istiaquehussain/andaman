@@ -1,0 +1,10 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: ConfigurationService
+info:
+  app:
+    name: Configuration Service Application
+    description: Service for Configuration
+    version: 1.0.0

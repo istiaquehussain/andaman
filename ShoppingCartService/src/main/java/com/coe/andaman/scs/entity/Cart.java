@@ -5,6 +5,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Transient;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.ToString;
@@ -20,9 +23,11 @@ public class Cart {
 	private Long userId;
 	private Long itemId;
 	@Transient
-	private Customer customerDeails = new Customer();
+	@JsonInclude(Include.NON_NULL)
+	private Customer customerDeails;
 	@Transient
-	private Item itemDeails = new Item();
+	@JsonInclude(Include.NON_NULL)
+	private Item itemDeails;
 	
 	public Cart()
 	{
