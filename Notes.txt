@@ -1,0 +1,8 @@
+Eureka URL http://localhost:8000/
+Customer Service URL http://10.72.26.18:8030/cs/customers	http://10.72.26.18:8030/cs/customers/1	
+Customer Service proxy URL http://10.72.26.18:8020/cs/customers		http://10.72.26.18:8020/cs/customers/1
+Item Service URL http://10.72.26.18:8040/ics/items	http://10.72.26.18:8040/ics/items/1	
+Item Service proxy URL http://10.72.26.18:8020/ics/items		http://10.72.26.18:8020/ics/items/1
+Cart Service URL http://10.72.26.18:8050/scs/carts	http://10.72.26.18:8050/scs/carts/1	
+Cart Service proxy URL http://10.72.26.18:8020/scs/carts		http://10.72.26.18:8020/scs/carts/1
+

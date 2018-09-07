@@ -34,10 +34,10 @@ public class ShoppingCartController {
 	@Autowired
     private EurekaClient eurekaClient;
 	
-	@Value("${service.customersearch.serviceId}")
+	@Value("${service.customer.serviceId}")
     private String customerSearchServiceId;
 	
-	@Value("${service.itemsearch.serviceId}")
+	@Value("${service.item.serviceId}")
     private String itemSearchServiceId;
 	
 	@GetMapping("/carts")

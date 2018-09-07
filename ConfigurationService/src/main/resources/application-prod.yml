@@ -1,0 +1,20 @@
+server:
+  port: 8888
+spring:
+  profiles:
+    include: git
+  cloud:
+    config:
+      discovery:
+        enabled: false
+      server:
+        native:
+          search-locations: /Users/istiaque_hussain/projects/coe/gits/andaman/ConfigFiles  
+        git:
+          uri: https://github.com/istiaquehussain/andaman.git
+          search-paths:
+          - ConfigFiles
+            
+               
+          
+            

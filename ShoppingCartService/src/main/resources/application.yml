@@ -9,7 +9,7 @@ info:
     description: Service for Shopping Cart
     version: 1.0.0
 service:
-  customersearch:
+  customer: 
     serviceId: CustomerService
-  itemsearch:
-    serviceId: ItemCatalogService
+  item:
+    serviceId: ItemCatalogService 

@@ -4,3 +4,10 @@ eureka:
   client:
     service-url:
       defaultZone: http://prod:9000/eureka/
+spring:
+  profiles:
+    include: git
+  cloud:
+    config:
+      uri: http://localhost:8888
+      name: andaman
