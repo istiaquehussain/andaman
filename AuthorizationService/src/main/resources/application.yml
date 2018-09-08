@@ -1,0 +1,10 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: AuthorizationService
+info:
+  app:
+    name: Authorization Service Application
+    description: Service for Customer
+    version: 1.0.0
