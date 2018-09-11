@@ -14,7 +14,15 @@ spring:
           uri: https://github.com/istiaquehussain/andaman.git
           search-paths:
           - ConfigFiles
-            
+logging:
+  file: /Users/istiaque_hussain/projects/coe/logs/${spring.application.name}.log
+  pattern:
+    file: "%d{yyyy-MM-dd'T'HH:mm:ss.SSSZ} [%c] %p %m%n"
+    console: "%d{yyyy-MM-dd'T'HH:mm:ss.SSSZ} [%c] %p %m%n"
+  level:
+    .: "ERROR"
+    org.springframework: INFO
+    com.coe.homs: DEBUG            
                
           
             

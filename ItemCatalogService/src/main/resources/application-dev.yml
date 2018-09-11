@@ -1,5 +1,7 @@
 server:
   port: 8040
+  servlet:
+    context-path: /ics
 eureka:
   client:
     service-url:
@@ -10,4 +12,4 @@ spring:
   cloud:
     config:
       uri: http://localhost:8888
-      name: andaman
+      profile: dev

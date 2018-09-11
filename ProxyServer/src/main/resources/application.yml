@@ -1,12 +1,12 @@
 spring:
   application:
-    name: ProxyService
+    name: ProxyServer
   profiles:
     active: dev
 zuul:
   routes:
     CustomerService:
-      path: /cs/**
+      path: /cus/**
       service-id: CustomerService
       strip-prefix: false
     ItemCatalogService:

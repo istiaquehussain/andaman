@@ -14,4 +14,11 @@ security:
       client-authentication-scheme: form
     resource:
       user-info-uri: https://api.github.com/user
-      prefer-token-info: false     
+      prefer-token-info: false
+spring:
+  profiles:
+    include: native
+  cloud:
+    config:
+      uri: http://localhost:8888
+      profile: prod    
