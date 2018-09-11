@@ -16,4 +16,12 @@ security:
       - read
       - write
       - openid
+spring:
+  profiles:
+    include: native
+  cloud:
+    config:
+      uri: http://localhost:8888
+      profile: dev
+     
       

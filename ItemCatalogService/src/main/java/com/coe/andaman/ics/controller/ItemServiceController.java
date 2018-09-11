@@ -1,4 +1,4 @@
-package com.coe.andaman.ics.controler;
+package com.coe.andaman.ics.controller;
 
 import java.util.List;
 
@@ -15,7 +15,6 @@ import com.coe.andaman.ics.entity.Item;
 import com.coe.andaman.ics.service.ItemService;
 
 @RestController
-@RequestMapping("/ics")
 public class ItemServiceController {
 	@Autowired
 	@Qualifier("ItemService")

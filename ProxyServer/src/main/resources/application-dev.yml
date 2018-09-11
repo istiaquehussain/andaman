@@ -1,5 +1,7 @@
 server:
   port: 8020
+  servlet:
+    context-path: /ps
 eureka:
   client:
     service-url:
@@ -8,4 +10,10 @@ security:
   oauth2:
     resource:
       user-info-uri: http://localhost:9000/as/user
-         
+spring:
+  profiles:
+    include: native
+  cloud:
+    config:
+      uri: http://localhost:8888
+      profile: dev       

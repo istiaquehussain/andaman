@@ -15,7 +15,6 @@ import com.coe.andaman.cs.entity.Customer;
 import com.coe.andaman.cs.service.CustomerService;
 
 @RestController
-@RequestMapping("/cs")
 public class CustomerServiceController {
 	@Autowired
 	@Qualifier("CustomerService")

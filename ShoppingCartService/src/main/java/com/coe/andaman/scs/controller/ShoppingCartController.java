@@ -1,4 +1,4 @@
-package com.coe.andaman.scs.controler;
+package com.coe.andaman.scs.controller;
 
 import java.util.List;
 
@@ -22,7 +22,6 @@ import com.netflix.discovery.EurekaClient;
 import com.netflix.discovery.shared.Application;
 
 @RestController
-@RequestMapping("/scs")
 public class ShoppingCartController {
 	@Autowired
     private RestTemplate restTemplate;
@@ -67,7 +66,7 @@ public class ShoppingCartController {
 	{
 		Application application = eurekaClient.getApplication(customerSearchServiceId);
 		InstanceInfo instanceInfo = application.getInstances().get(0);
-		String url = "http://" + instanceInfo.getIPAddr() + ":" + instanceInfo.getPort() + "/" + "cs/customers/" + id;
+		String url = "http://" + instanceInfo.getIPAddr() + ":" + instanceInfo.getPort() + "/" + "cus/customers/" + id;
         System.out.println("URL" + url);
         return restTemplate.getForObject(url, Customer.class);
 	}
