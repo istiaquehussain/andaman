@@ -12,10 +12,12 @@
 	<name>Andaman</name>
 	<description>Project Andaman</description>
 	<modules>
-		<module>/CustomerService</module>
 		<module>/DiscoveryService</module>
+		<module>/ProxyServer</module>
+		<module>/ConfigurationService</module>
+		<module>/AuthServer</module>
+		<module>/CustomerService</module>
 		<module>/ItemCatalogService</module>
-		<module>/ProxyService</module>
 		<module>/ShoppingCartService</module>
 	</modules>
 <!-- mvn spring-boot:run-->
