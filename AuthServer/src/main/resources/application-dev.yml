@@ -2,20 +2,16 @@ server:
   port: 9000
   servlet:
     context-path: /as
-security:
+app:
   oauth2:
+    jwt:
+      signing-key: as466gf
+    realm: TESTREALM
     client:
       client-id: dev123
-      client-secret: pwd
-      authorized-grant-types:
-      - password
-      - client_credential
-      - authorization_code
-      - refresh_token
-      scope:
-      - read
-      - write
-      - openid
+      client-pwd: pwd
+      token-validity: 3600
+      refresh-token-validity: 21600
 spring:
   profiles:
     include: native
