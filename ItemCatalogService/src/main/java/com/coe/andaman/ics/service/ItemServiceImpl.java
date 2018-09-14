@@ -8,24 +8,30 @@ import org.springframework.stereotype.Service;
 
 import com.coe.andaman.ics.dao.ItemRepository;
 import com.coe.andaman.ics.entity.Item;
-@Service("ItemService")
-public class ItemServiceImpl implements ItemService {
+@Service
+public class ItemServiceImpl implements ItemService{
 	@Autowired
-	ItemRepository repository;
-	@Override
-	public void createItem(Item item) {
-		repository.save(item);
-
+	ItemRepository itemRepository;
+	
+	public Optional<Item> findItemById(Long id)
+	{
+		return itemRepository.findById(id);
 	}
-
-	@Override
-	public Optional<Item> getItemById(long id) {
-		return repository.findById(id);
+	
+	public Optional<Item> findItemByBrand(String brand)
+	{
+		return itemRepository.findItemByBrand(brand);
 	}
-
-	@Override
-	public List<Item> getAllItem() {
-		return repository.findAll();
+	
+	public List<Item> findAllItems()
+	{
+		return itemRepository.findAll();
 	}
+	public Item createItem(Item item)
+	{
+		return itemRepository.save(item);
+	}
+	
+	
 
 }

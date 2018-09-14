@@ -1,31 +1,37 @@
 package com.coe.andaman.scs.entity;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.ToString;
+import lombok.NoArgsConstructor;
 
 @Data
+@Entity
 @AllArgsConstructor
 //@NoArgsConstructor
-@ToString
-//@Entity
 public class Customer {
-	@Id
-    @GeneratedValue
-	private Long id;
-	private String lName;
-	private String fName;
+	@Id @GeneratedValue
+	Long id;
+	String uid;
+	String fname;
+	String lname;
+	@OneToOne(fetch = FetchType.LAZY,cascade=CascadeType.PERSIST)
+    @JoinColumn(name = "address_id")
+	Address address;
 	
-	public Customer()
+	public Customer(String uid,String fanme,String lname,Address address)
 	{
-		
+		this.uid=uid;
+		this.fname=fname;
+		this.lname=lname;
+		this.address=address;
 	}
-	public Customer(String fName,String lName)
-	{
-		this.lName=lName;
-		this.fName=fName;
-	}
+
 }

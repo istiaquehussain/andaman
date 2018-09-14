@@ -4,10 +4,15 @@ import java.util.List;
 import java.util.Optional;
 
 import com.coe.andaman.ics.entity.Item;
-
 public interface ItemService {
-	public void createItem(Item item);
-	public Optional<Item> getItemById(long id);
-	public List<Item> getAllItem();
-}
+	
+	public Optional<Item> findItemById(Long id);
+	
+	public Optional<Item> findItemByBrand(String brand);
+	
+	public List<Item> findAllItems();
+	public Item createItem(Item item);
+	
+	
 
+}

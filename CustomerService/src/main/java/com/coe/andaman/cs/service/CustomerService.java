@@ -4,9 +4,21 @@ import java.util.List;
 import java.util.Optional;
 
 import com.coe.andaman.cs.entity.Customer;
-//@Repository
+
 public interface CustomerService {
-	public void createCustomer(Customer customer);
-	public Optional<Customer> getCutomerById(long id);
-	public List<Customer> getAllCustomer();
+	
+	
+	public Optional<Customer> findCustomerById(Long id);
+	
+	
+	public Optional<Customer> findCustomerByUid(String uid);
+	
+	
+	public List<Customer> findAllCustomers();
+	
+	public Customer createCustomer(Customer customer);
+	
+	
+	
+
 }
