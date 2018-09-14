@@ -6,26 +6,20 @@ import javax.persistence.Id;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.ToString;
 
 @Data
-@AllArgsConstructor
-@ToString
 @Entity
+@AllArgsConstructor
 public class Item {
-	@Id
-    @GeneratedValue
-	private Long id;
-	private String name;
-	private String description;
+	@Id @GeneratedValue
+	Long id;
+	String brand;
+	String description;
 	
-	public Item()
+	
+	public Item(String brand,String description)
 	{
-		
-	}
-	public Item(String name,String description)
-	{
-		this.name=name;
+		this.brand=brand;
 		this.description=description;
 	}
 

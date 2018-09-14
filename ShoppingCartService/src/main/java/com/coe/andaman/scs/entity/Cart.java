@@ -10,32 +10,24 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.ToString;
 
 @Data
-@AllArgsConstructor
-@ToString
 @Entity
+@AllArgsConstructor
 public class Cart {
-	@Id
-    @GeneratedValue
-	private Long id;
-	private Long userId;
-	private Long itemId;
+	@Id @GeneratedValue
+	Long id;
+	Long uid;
+	Long itemId;
 	@Transient
 	@JsonInclude(Include.NON_NULL)
 	private Customer customerDeails;
 	@Transient
 	@JsonInclude(Include.NON_NULL)
 	private Item itemDeails;
-	
-	public Cart()
+	public Cart(Long uid, Long itemId)
 	{
-		
-	}
-	public Cart(Long userId,Long itemId)
-	{
-		this.userId=userId;
+		this.uid=uid;
 		this.itemId=itemId;
 	}
 

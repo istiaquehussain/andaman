@@ -5,11 +5,15 @@ import java.util.Optional;
 
 import com.coe.andaman.as.entity.User;
 
-
 public interface UserService {
-	public void createUser(User user);
-	public Optional<User> getUserById(long id);
-	public Optional<User> getUserByUid(String uid);
-	public List<User> getAllUsers();
+	
+	public Optional<User> findUserById(Long id);
+	
+	public Optional<User> findUserByUid(String uid);
+	
+	public List<User> findAllUsers();
+	public User createUser(User user);
+	
+	
 
 }

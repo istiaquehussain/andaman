@@ -1,66 +1,30 @@
 package com.coe.andaman.as.entity;
 
-import java.util.List;
-
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
-//@Entity
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@Entity
+@AllArgsConstructor
+//@NoArgsConstructor
 public class Role {
-	@Id
-	@JsonIgnore
-	private String id;
-	@JsonProperty("id")
-	private String rid;
-	private String name;
-	private String desciption;
-	private List<User> users;
+	@Id @GeneratedValue
+	Long id;
+	String name;
+	@ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "uid")
+    User user;
+	public Role(String name)
+	{
+		this.name=name;
+	}
 	
-	
-	
-	public Role(String id, String rid, String name, String desciption) {
-		super();
-		this.id = id;
-		this.rid = rid;
-		this.name = name;
-		this.desciption = desciption;
-	}
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
-	public String getRid() {
-		return rid;
-	}
-	public void setRid(String rid) {
-		this.rid = rid;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getDesciption() {
-		return desciption;
-	}
-	public void setDesciption(String desciption) {
-		this.desciption = desciption;
-	}
-	public List<User> getUsers() {
-		return users;
-	}
-	public void setUsers(List<User> users) {
-		this.users = users;
-	}
-	@Override
-	public String toString() {
-		return "Role [id=" + id + ", rid=" + rid + ", name=" + name + ", desciption=" + desciption + ", users=" + users
-				+ "]";
-	}
 
 }

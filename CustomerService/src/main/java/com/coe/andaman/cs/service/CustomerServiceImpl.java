@@ -8,21 +8,30 @@ import org.springframework.stereotype.Service;
 
 import com.coe.andaman.cs.dao.CustomerRepository;
 import com.coe.andaman.cs.entity.Customer;
-@Service("CustomerService")
-public class CustomerServiceImpl implements CustomerService {
+@Service
+public class CustomerServiceImpl implements CustomerService{
 	@Autowired
-	CustomerRepository repository;
-	@Override
-	public void createCustomer(Customer customer) {
-		repository.save(customer);	
+	CustomerRepository customerRepository;
+	
+	public Optional<Customer> findCustomerById(Long id)
+	{
+		return customerRepository.findById(id);
 	}
-	@Override
-	public Optional<Customer> getCutomerById(long id) {
-		return repository.findById(id);
+	
+	public Optional<Customer> findCustomerByUid(String uid)
+	{
+		return customerRepository.findCustomerByUid(uid);
 	}
-	@Override
-	public List<Customer> getAllCustomer() {
-		return repository.findAll();
+	
+	public List<Customer> findAllCustomers()
+	{
+		return customerRepository.findAll();
 	}
+	public Customer createCustomer(Customer customer)
+	{
+		return customerRepository.save(customer);
+	}
+	
+	
 
 }

@@ -11,39 +11,36 @@ import org.springframework.stereotype.Service;
 
 import com.coe.andaman.as.dao.UserRepository;
 import com.coe.andaman.as.entity.User;
-
 @Service
-public class UserServiceImpl implements UserService, UserDetailsService {
-
-	
+public class UserServiceImpl implements UserService , UserDetailsService {
 	@Autowired
-	UserRepository UserRepository;
+	UserRepository userRepository;
 	
+	public Optional<User> findUserById(Long id)
+	{
+		return userRepository.findById(id);
+	}
+	
+	public Optional<User> findUserByUid(String uid)
+	{
+		return userRepository.findUserByUid(uid);
+	}
+	
+	public List<User> findAllUsers()
+	{
+		return userRepository.findAll();
+	}
+	public User createUser(User user)
+	{
+		return userRepository.save(user);
+	}
+
 	@Override
 	public UserDetails loadUserByUsername(String uid) throws UsernameNotFoundException {
-		return getUserByUid(uid).orElseThrow(()->new UsernameNotFoundException("UID not found for "+uid));
-	}
-
-	@Override
-	public void createUser(User user) {
-		UserRepository.save(user);
+		return findUserByUid(uid).orElseThrow(()->new UsernameNotFoundException("UID not found for "+uid));
 		
 	}
-
-	@Override
-	public Optional<User> getUserById(long id) {
-		return UserRepository.findById(id);
-	}
-
-	@Override
-	public List<User> getAllUsers() {
-		return UserRepository.findAll();
-	}
-
-	@Override
-	public Optional<User> getUserByUid(String uid) {
-		return UserRepository.findByUid(uid);
-	}
-
 	
+	
+
 }
